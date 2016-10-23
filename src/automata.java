@@ -1,7 +1,7 @@
 import java.util.Objects;
 
-class automataUno {
-    static boolean afd(String cadena) {
+class automata {
+    static boolean afdUno(String cadena) {
         boolean isValid = false;
         int status = 0;
         if (Objects.equals(cadena, ""))

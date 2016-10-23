@@ -7,7 +7,7 @@ public class Main {
         System.out.println("Ingresa la cadena a comprobar:");
         Scanner datos = new Scanner(System.in);
         cadena = datos.nextLine();
-        if (automataUno.afd(cadena)){
+        if (automata.afdUno(cadena)){
             System.out.println("La cadena " + cadena + " es valida");
         }
         else {
