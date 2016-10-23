@@ -3,15 +3,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String cadena;
-        System.out.println("Ingresa la cadena a comprobar:");
+        Menu.displayHome();
         Scanner datos = new Scanner(System.in);
-        cadena = datos.nextLine();
-        if (automata.afdUno(cadena)){
-            System.out.println("La cadena " + cadena + " es valida");
-        }
-        else {
-            System.out.println("La cadena " + cadena + " es invalida");
+        int option;
+        option = Integer.parseInt(datos.nextLine());
+        datos.reset();
+        if (option == 1){
+            System.out.println("Ingresa la cadena a comprobar:");
+            String cadena;
+            cadena = datos.nextLine();
+            if (automata.afdUno(cadena)){
+                System.out.println("La cadena " + cadena + " es valida");
+            }
+            else {
+                System.out.println("La cadena " + cadena + " es invalida");
+            }
         }
     }
 }
