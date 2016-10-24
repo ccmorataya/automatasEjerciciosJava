@@ -61,4 +61,32 @@ class automata {
         }
         return status == 1;
     }
+    static boolean afdCuatro(String cadena){
+        int status = 0;
+        boolean isValid = false;
+        char c;
+        char cPrev = 0;
+
+        for (int i = 0; i < cadena.length(); i++) {
+            c = cadena.charAt(i);
+            try {
+                cPrev = cadena.charAt(i - 1);
+            }
+            catch (Exception ignored){}
+            if (status == 0) {
+                if (c != 'a') {
+                    status = -1;
+                } else {
+                    status = 1;
+                }
+            }
+            if (status == 1 && (c == 'b' || c == 'c'))
+                isValid = true;
+            else if (status == 1 && cPrev == 'a')
+                return false;
+            else
+                isValid = false;
+        }
+        return isValid;
+    }
 }
