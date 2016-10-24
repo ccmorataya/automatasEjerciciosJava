@@ -12,7 +12,7 @@ class automata {
                 if (c == 'a')
                     isValid = true;
                 else {
-                    status = 1;
+                    status = -1;
                 }
             } else {
                 isValid = false;
@@ -86,6 +86,26 @@ class automata {
                 return false;
             else
                 isValid = false;
+        }
+        return isValid;
+    }
+    static boolean afdCinco(String cadena){
+        boolean isValid = false;
+        int status = 0;
+        if (Objects.equals(cadena, ""))
+            isValid = true;
+        for (int i = 0; i < cadena.length(); i++) {
+            Character c = cadena.charAt(i);
+            if (status == 0) {
+                if (c == 'a' || c == 'b' || c == 'c')
+                    isValid = true;
+                else {
+                    status = -1;
+                    isValid = false;
+                }
+            } else {
+                isValid = false;
+            }
         }
         return isValid;
     }
