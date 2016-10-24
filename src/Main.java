@@ -30,5 +30,16 @@ public class Main {
                 System.out.println("La cadena " + cadena + " es invalida");
             }
         }
+        else if (option == 3){
+            System.out.println("Ingresa la cadena a comprobar:");
+            String cadena;
+            cadena = datos.nextLine();
+            if (automata.afdTres(cadena)){
+                System.out.println("La cadena " + cadena + " es valida");
+            }
+            else {
+                System.out.println("La cadena " + cadena + " es invalida");
+            }
+        }
     }
 }

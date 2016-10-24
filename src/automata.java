@@ -31,8 +31,30 @@ class automata {
                     status = 1;
                 }
             }
+            else if (status == 1){
+                if (c != 'a'){
+                    status = 2;
+                }
+            }
         }
         isValid = status == 1;
         return isValid;
+    }
+
+    static boolean afdTres(String cadena){
+        int status = 0;
+        for (int i = 0; i < cadena.length(); i++) {
+            char c = cadena.charAt(i);
+            if (status == 0) {
+                if (c != 'a' && c != 'b' && c != 'c') {
+                    status = -1;
+                } else {
+                    if (c == 'c'){
+                        status = 1;
+                    }
+                }
+            }
+        }
+        return status == 1;
     }
 }
