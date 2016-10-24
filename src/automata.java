@@ -49,11 +49,15 @@ class automata {
                 if (c != 'a' && c != 'b' && c != 'c') {
                     status = -1;
                 } else {
-                    if (c == 'c'){
+                    if (cadena.charAt(0) == 'c')
+                        status = -1;
+                    else if (c == 'c'){
                         status = 1;
                     }
                 }
             }
+            else if (status == 1 && i < cadena.length())
+                status = 2;
         }
         return status == 1;
     }
